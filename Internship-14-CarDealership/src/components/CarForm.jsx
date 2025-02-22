@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import { TextField, Button, MenuItem, Box } from "@mui/material";
 
 const CarForm = ({ addCar }) => {
@@ -16,7 +17,7 @@ const CarForm = ({ addCar }) => {
     }
 
     const newCar = {
-      id: Math.max(0, ...cars.map((car) => car.id)) + 1,
+      id: uuidv4(),
       brand,
       model,
       type,
