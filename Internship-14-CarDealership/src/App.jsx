@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import "./App.css";
+import "./styles/App.css";
+import "./styles/variables.css";
 import CarForm from "./components/CarForm";
 import CarList from "./components/CarList";
 import Filter from "./components/FilterCars";

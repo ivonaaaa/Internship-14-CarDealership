@@ -1,5 +1,5 @@
 import { Card, CardContent, Typography, Button } from "@mui/material";
-import "../App.css";
+import "../styles/App.css";
 
 const CarCard = ({ car, removeCar }) => {
   const isExpiring =
@@ -9,16 +9,16 @@ const CarCard = ({ car, removeCar }) => {
   return (
     <Card className={`car-card ${isExpiring ? "car-card-expiring" : ""}`}>
       <CardContent>
-        <Typography variant="h6">
+        <Typography className="card-text">
           {car.brand} {car.model} ({car.year})
         </Typography>
-        <Typography>Type: {car.type}</Typography>
-        <Typography color="textSecondary">
+        <Typography className="card-text">Type: {car.type}</Typography>
+        <Typography className="card-text">
           Registration Expires: {car.registration}
         </Typography>
         <Button
+          className="remove-btn"
           variant="contained"
-          color="error"
           onClick={() => removeCar(car.id)}
         >
           Remove

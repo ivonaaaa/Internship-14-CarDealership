@@ -1,0 +1,43 @@
+body {
+  margin: 0 auto;
+  padding: 2rem;
+  min-width: 320px;
+  min-height: 100vh;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-family: "MyFont", sans-serif;
+  background-color: var(--grey-color);
+}
+
+.container h1 {
+  font-size: 4rem;
+  color: var(--navy-color);
+}
+
+button {
+  font-family: "MyFont", sans-serif !important;
+}
+
+.card-text {
+  color: var(--navy-color);
+  font-family: "MyFont", sans-serif !important;
+}
+.card-text:nth-child(1) {
+  font-size: 1.4rem;
+  color: var(--orange-color);
+}
+
+.remove-btn {
+  color: var(--navy-color);
+  background-color: var(--orange-color);
+}
+
+.car-card {
+  margin-bottom: 16px;
+  padding: 16px;
+  border: 1px solid #ddd;
+}
+.car-card-expiring {
+  border: 2px solid red;
+}
