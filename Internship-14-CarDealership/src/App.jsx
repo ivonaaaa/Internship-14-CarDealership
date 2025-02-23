@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "./styles/App.css";
 import "./styles/variables.css";
+import backgroundImage from "./assets/images/background-image.jpg";
 import CarForm from "./components/CarForm";
 import CarList from "./components/CarList";
 import Filter from "./components/FilterCars";
@@ -51,6 +52,12 @@ function App() {
   return (
     <div className="container">
       <h1>Car Inventory</h1>
+      <img
+        src={backgroundImage}
+        alt="Background"
+        className="background-image"
+      />
+      ;
       <CarForm addCar={addCar} />
       <Filter setFilter={setFilter} />
       <CarList cars={filteredCars} removeCar={removeCar} />

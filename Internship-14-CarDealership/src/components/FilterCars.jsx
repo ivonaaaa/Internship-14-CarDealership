@@ -1,6 +1,6 @@
 const Filter = ({ setFilter }) => {
   return (
-    <div>
+    <div className="filter">
       <input
         type="text"
         placeholder="Search brand or model"

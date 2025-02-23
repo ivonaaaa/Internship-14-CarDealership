@@ -34,7 +34,7 @@ const CarForm = ({ addCar }) => {
   };
 
   return (
-    <Box component="form" onSubmit={handleSubmit}>
+    <Box component="form" onSubmit={handleSubmit} className="car-form">
       <TextField
         label="Brand"
         value={brand}
