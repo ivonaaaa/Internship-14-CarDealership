@@ -13,7 +13,7 @@ body {
 .background-image {
   position: fixed;
   top: 0;
-  right: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
   object-fit: cover;
@@ -54,7 +54,7 @@ button:hover {
 }
 
 .filter input {
-  margin-top: 40px;
+  margin: 40px 0 20px 0;
   width: 360px;
   padding: 15px;
   border: 1px solid var(--navy-color);
@@ -69,6 +69,7 @@ button:hover {
   margin-bottom: 16px;
   padding: 16px;
   border: 1px solid #ddd;
+  opacity: 80%;
 }
 
 .car-card-expiring {
@@ -88,4 +89,10 @@ button:hover {
 .remove-btn {
   color: var(--navy-color);
   background-color: var(--orange-color);
+}
+
+.no-cars {
+  padding: 20px;
+  color: var(--grey-color);
+  font-family: "MyFont", sans-serif !important;
 }

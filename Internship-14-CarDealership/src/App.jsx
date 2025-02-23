@@ -57,7 +57,6 @@ function App() {
         alt="Background"
         className="background-image"
       />
-      ;
       <CarForm addCar={addCar} />
       <Filter setFilter={setFilter} />
       <CarList cars={filteredCars} removeCar={removeCar} />

@@ -16,6 +16,21 @@ const CarForm = ({ addCar }) => {
       return;
     }
 
+    const maxYear = new Date().getFullYear();
+    if (parseInt(year) > maxYear) {
+      alert(`Car year cannot be later than ${maxYear}!`);
+      return;
+    }
+
+    const registrationDate = new Date(registration);
+    const maxRegistrationDate = new Date();
+    maxRegistrationDate.setFullYear(maxRegistrationDate.getFullYear() + 1);
+
+    if (registrationDate > maxRegistrationDate) {
+      alert("Registration expiry cannot be more than 1 year from today!");
+      return;
+    }
+
     const newCar = {
       id: uuidv4(),
       brand,
@@ -26,6 +41,7 @@ const CarForm = ({ addCar }) => {
     };
 
     addCar(newCar);
+
     setBrand("");
     setModel("");
     setType("");
