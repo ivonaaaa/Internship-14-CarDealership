@@ -39,24 +39,27 @@ const CarForm = ({ addCar }) => {
         label="Brand"
         value={brand}
         onChange={(e) => setBrand(e.target.value)}
+        fullWidth
       />
       <TextField
         label="Model"
         value={model}
         onChange={(e) => setModel(e.target.value)}
+        fullWidth
       />
       <TextField
         select
         label="Type"
         value={type}
         onChange={(e) => setType(e.target.value)}
+        fullWidth
       >
         <MenuItem value="Sedan">Sedan</MenuItem>
         <MenuItem value="SUV">SUV</MenuItem>
-        <MenuItem value="Hatchback">Truck</MenuItem>
-        <MenuItem value="Hatchback">Sports Car</MenuItem>
-        <MenuItem value="Hatchback">Roadster</MenuItem>
-        <MenuItem value="Hatchback">Hybrid</MenuItem>
+        <MenuItem value="Truck">Truck</MenuItem>
+        <MenuItem value="Sports Car">Sports Car</MenuItem>
+        <MenuItem value="Roadster">Roadster</MenuItem>
+        <MenuItem value="Hybrid">Hybrid</MenuItem>
       </TextField>
       <TextField
         label="Year"
@@ -70,6 +73,10 @@ const CarForm = ({ addCar }) => {
         type="date"
         value={registration}
         onChange={(e) => setRegistration(e.target.value)}
+        fullWidth
+        InputLabelProps={{
+          shrink: true,
+        }}
       />
       <Button variant="contained" type="submit">
         Add Car

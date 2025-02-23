@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import CarForm from "./components/CarForm";
 import CarList from "./components/CarList";
+import Filter from "./components/FilterCars";
 
 function App() {
   const getCarsFromStorage = () => {
@@ -14,7 +15,7 @@ function App() {
   };
 
   const [cars, setCars] = useState(getCarsFromStorage() || []);
-  //const [filter, setFilter] = useState("");
+  const [filter, setFilter] = useState("");
 
   useEffect(() => {
     saveCarsToStorage(cars);
@@ -38,11 +39,20 @@ function App() {
     });
   };
 
+  const filteredCars = sortCars(
+    cars.filter(
+      (car) =>
+        car.brand.toLowerCase().includes(filter.toLowerCase()) ||
+        car.model.toLowerCase().includes(filter.toLowerCase())
+    )
+  );
+
   return (
     <div className="container">
       <h1>Car Inventory</h1>
       <CarForm addCar={addCar} />
-      <CarList cars={cars} removeCar={removeCar} />
+      <Filter setFilter={setFilter} />
+      <CarList cars={filteredCars} removeCar={removeCar} />
     </div>
   );
 }
