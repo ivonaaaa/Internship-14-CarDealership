@@ -5,6 +5,7 @@ import backgroundImage from "./assets/images/background-image.jpg";
 import CarForm from "./components/CarForm";
 import CarList from "./components/CarList";
 import Filter from "./components/FilterCars";
+import { v4 as uuidv4 } from "uuid";
 
 function App() {
   const getCarsFromStorage = () => {
@@ -18,6 +19,85 @@ function App() {
 
   const [cars, setCars] = useState(getCarsFromStorage() || []);
   const [filter, setFilter] = useState("");
+
+  useEffect(() => {
+    window.addTestCars = () => {
+      const testCars = [
+        {
+          brand: "Toyota",
+          model: "Yaris",
+          year: 2025,
+          type: "Sedan",
+          registration: "2026-01-12",
+        },
+        {
+          brand: "Audi",
+          model: "Q5",
+          year: 2024,
+          type: "SUV",
+          registration: "2025-03-17",
+        },
+        {
+          brand: "Tesla",
+          model: "Model 3",
+          year: 2022,
+          type: "Hybrid",
+          registration: "2025-05-26",
+        },
+        {
+          brand: "Lamborghini",
+          model: "Countach",
+          year: 2018,
+          type: "Sports Car",
+          registration: "2025-05-14",
+        },
+        {
+          brand: "Peugeot",
+          model: "206",
+          year: 2016,
+          type: "Sedan",
+          registration: "2025-04-29",
+        },
+        {
+          brand: "Peugeot",
+          model: "208",
+          year: 2016,
+          type: "Sedan",
+          registration: "2025-10-16",
+        },
+        {
+          brand: "Nissan",
+          model: "Frontier",
+          year: 2013,
+          type: "Truck",
+          registration: "2025-03-18",
+        },
+        {
+          brand: "BMW",
+          model: "E36",
+          year: 2010,
+          type: "Roadster",
+          registration: "2025-03-08",
+        },
+        {
+          brand: "Mazda",
+          model: "MX5 Miata",
+          year: 2008,
+          type: "Roadster",
+          registration: "2026-01-14",
+        },
+        {
+          brand: "Porsche",
+          model: "911",
+          year: 1990,
+          type: "Sports Car",
+          registration: "2026-01-07",
+        },
+      ].map((car) => ({ ...car, id: uuidv4() }));
+
+      setCars(testCars);
+    };
+  }, []);
 
   useEffect(() => {
     saveCarsToStorage(cars);
